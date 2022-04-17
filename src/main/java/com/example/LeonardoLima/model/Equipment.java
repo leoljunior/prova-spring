@@ -1,15 +1,18 @@
 package com.example.LeonardoLima.model;
 
-import java.time.LocalDateTime;
+import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 
 @Entity
-public class Equipment {
+@IdClass(Equipment.class)
+public class Equipment extends Auditing implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,8 +20,10 @@ public class Equipment {
 	private String tag;
 	private String name;
 	private String provider;
-	private String nextMaitenanceDate;
+	private LocalDate nextMaitenanceDate;
 	private Double weight;
+	
+	public Equipment() {};
 	
 	public Long getId() {
 		return id;
@@ -44,10 +49,10 @@ public class Equipment {
 	public void setProvider(String provider) {
 		this.provider = provider;
 	}
-	public String getNextMaitenanceDate() {
+	public LocalDate getNextMaitenanceDate() {
 		return nextMaitenanceDate;
 	}
-	public void setNextMaitenanceDate(String nextMaitenanceDate) {
+	public void setNextMaitenanceDate(LocalDate nextMaitenanceDate) {
 		this.nextMaitenanceDate = nextMaitenanceDate;
 	}
 	public Double getWeight() {
