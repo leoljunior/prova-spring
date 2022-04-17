@@ -17,7 +17,7 @@ public class Equipment {
 	private String tag;
 	private String name;
 	private String provider;
-	private LocalDateTime nextMaitenanceDate;
+	private String nextMaitenanceDate;
 	private Double weight;
 	
 	public Long getId() {
@@ -44,10 +44,10 @@ public class Equipment {
 	public void setProvider(String provider) {
 		this.provider = provider;
 	}
-	public LocalDateTime getNextMaitenanceDate() {
+	public String getNextMaitenanceDate() {
 		return nextMaitenanceDate;
 	}
-	public void setNextMaitenanceDate(LocalDateTime nextMaitenanceDate) {
+	public void setNextMaitenanceDate(String nextMaitenanceDate) {
 		this.nextMaitenanceDate = nextMaitenanceDate;
 	}
 	public Double getWeight() {
